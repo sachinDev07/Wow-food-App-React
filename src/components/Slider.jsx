@@ -7,7 +7,7 @@ import Img from "./Img";
 import { APP_API, IMG_CDN_API } from "../utils/constant";
 
 const Slider = () => {
-  const [mydata, setMyData] = useState(null);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,8 +19,7 @@ const Slider = () => {
     try {
       const response = await fetch(APP_API);
       const data = await response.json();
-      console.log(data.data.cards[0].data.data.cards);
-      setMyData(data.data.cards[0].data.data.cards);
+      setData(data.data.cards[0].data.data.cards);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -37,9 +36,9 @@ const Slider = () => {
   }
 
   return (
-    <div className="px-44 bg-slate-900 py-12">
+    <div className="px-44 bg-slate-900 py-12 relative z-30">
       <Carousel responsive={responsive}>
-        {mydata?.map((myitems) => (
+        {data?.map((myitems) => (
           <div key={IMG_CDN_API + myitems.data.bannerId} className="transition-transfrom hover:scale-105 duration-150">
             <Img
               className="h-auto w-64 "
