@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import "./index.css";
 
 import HomePage from "./pages/HomePage.jsx";
+import Restaurant from "./components/Restaurant.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
-      }
-    ]
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <Restaurant />,
+      },
+    ],
   },
 ]);
 
