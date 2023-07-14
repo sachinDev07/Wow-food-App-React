@@ -46,7 +46,11 @@ const RestaurantsData = ({
         </div>
         {show &&
           menuItem?.map((item) => (
-            <MenuItem key={item.card.info.id} {...item.card.info} />
+            <MenuItem
+              key={item.card.info.id}
+              item={item.card.info}
+              {...item.card.info}
+            />
           ))}
       </div>
     </>
