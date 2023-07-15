@@ -7,6 +7,8 @@ import "./index.css";
 
 import HomePage from "./pages/HomePage.jsx";
 import RestaurantPage from "./pages/RestaurantPage.jsx";
+import CartPage from "./pages/CartPage.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantPage />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
       },
     ],
   },
