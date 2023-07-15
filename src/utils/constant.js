@@ -3,3 +3,6 @@ export const APP_API =
 
 export const IMG_CDN_API =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/";
+
+export const SEARCH_API =
+  "https://www.swiggy.com/dapi/landing/PRE_SEARCH?lat=23.0363768&lng=72.5466727";
