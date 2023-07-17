@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import useGetRestaurantLists from "../utils/useGetRestaurantLists";
+import RestaurantCardSkeleton from "./RestaurantCardSkeleton";
 
 const RestaurantMenu = () => {
   const { restaurantData, numberOfRestaurants, sortsData, loading, error } =
     useGetRestaurantLists();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <RestaurantCardSkeleton />;
   }
 
   if (error) {

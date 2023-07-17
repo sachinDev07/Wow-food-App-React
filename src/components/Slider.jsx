@@ -6,12 +6,13 @@ import { responsive } from "../utils/breakPoints";
 import Img from "./Img";
 import { IMG_CDN_API } from "../utils/constant";
 import useFetchApi from "../utils/useFetchApi";
+import BannerSkeleton from "./BannerSkeleton";
 
 const Slider = () => {
   const { data, loading, error } = useFetchApi();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <BannerSkeleton />;
   }
 
   if (error) {

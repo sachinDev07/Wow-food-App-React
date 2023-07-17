@@ -1,6 +1,7 @@
 import ImageGridCards from "./ImageGridCard";
 import SearchSuggestions from "./SearchSuggestions";
 import useSearchItem from "../utils/useSearchItem";
+import InputSkeleton from "./InputSkeleton";
 
 const SearchItem = () => {
   const {
@@ -15,7 +16,7 @@ const SearchItem = () => {
 
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <InputSkeleton />;
   }
 
   if (errorMessage) {
