@@ -8,10 +8,22 @@ const useSearchItem = () => {
   const [imageCardData, setImageCardData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [timer, setTimer] = useState(null);
 
   useEffect(() => {
     fetchSearchData();
-    fetchSuggestions();
+
+    if (inputData) {
+      const newTimer = setTimeout(fetchSuggestions, 200);
+      setTimer(newTimer);
+    } else {
+      setSuggestions(null);
+      clearTimeout(timer);
+    }
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [inputData]);
 
   const fetchSearchData = async () => {
@@ -32,7 +44,14 @@ const useSearchItem = () => {
     const data = await response.json();
     setSuggestions(data.data.suggestions);
   };
-  return {inputData, setInputData, suggestions, imageCardData, loading, errorMessage};
+  return {
+    inputData,
+    setInputData,
+    suggestions,
+    imageCardData,
+    loading,
+    errorMessage,
+  };
 };
 
 export default useSearchItem;
