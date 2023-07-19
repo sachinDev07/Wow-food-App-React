@@ -1,32 +1,38 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Cart from "../components/Cart";
 import CartEmpty from "../components/CartEmpty";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
   const deliveryCharge = 24;
   const gstCharge = 54;
 
   function totalItem() {
     const totalItemPrice = cartItems
-      .map((cartItem) => (cartItem.price && cartItem.quantity) ? (cartItem.price / 100) * cartItem.quantity : 0)
+      .map((cartItem) =>
+        cartItem.price && cartItem.quantity
+          ? (cartItem.price / 100) * cartItem.quantity
+          : 0
+      )
       .reduce((acc, cartItem) => acc + cartItem, 0);
     return totalItemPrice.toFixed(2);
   }
-  
+
   function getTotalPrice() {
     const totalItemPrice = cartItems
-      .map((cartItem) => (cartItem.price && cartItem.quantity) ? (cartItem.price / 100) * cartItem.quantity : 0)
+      .map((cartItem) =>
+        cartItem.price && cartItem.quantity
+          ? (cartItem.price / 100) * cartItem.quantity
+          : 0
+      )
       .reduce((acc, cartItem) => acc + cartItem, 0);
     return (totalItemPrice + deliveryCharge + gstCharge).toFixed(2);
   }
 
-  if(cartItems.length === 0){
-    return <CartEmpty />
+  if (cartItems.length === 0) {
+    return <CartEmpty />;
   }
-  
-  
 
   return (
     <div className="pt-[100px]  select-none flex px-44 py-8 justify-between bg-slate-200 min-h-screen gap-4">
@@ -53,6 +59,11 @@ const CartPage = () => {
             <span className="font-bold">TO PAY</span>
             <span className="font-bold">Rs {getTotalPrice()}</span>
           </div>
+          <Link to="/thankyou">
+            <button className="flex items-center justify-center w-full mt-7 bg-green-500 hover:bg-green-600 transition-colors duration-300 py-2 rounded-md text-white text-lg">
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>
