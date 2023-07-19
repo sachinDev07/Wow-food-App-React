@@ -3,8 +3,8 @@ import { addItem, removeItem } from "../utils/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  
   const dispatch = useDispatch();
-  console.log(cartItems);
 
   function getTotalQuantity(item) {
     const quantity = item.quantity || 0;
