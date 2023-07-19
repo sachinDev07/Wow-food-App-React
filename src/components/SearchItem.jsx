@@ -13,7 +13,20 @@ const SearchItem = () => {
     errorMessage,
   } = useSearchItem();
 
+  const getQuery = (link) => {
+    const url = link;
+    const queryIndex = url.indexOf("?query=");
+    if (queryIndex !== -1) {
+      const query = url.substring(queryIndex + 7);
+      return query;
+    }
+  };
 
+  const searchHandler = (item) => {
+    console.log(item.action.link);
+    const newInputData = getQuery(item.action.link);
+    setInputData(newInputData);
+  };
 
   if (loading) {
     return <InputSkeleton />;
@@ -47,7 +60,9 @@ const SearchItem = () => {
         <div className="flex mt-3 gap-4 overflow-hidden w-full">
           {!inputData &&
             imageCardData?.map((item) => (
-              <ImageGridCards key={item.id} {...item} />
+              <div key={item.id} onClick={() => searchHandler(item)}>
+                <ImageGridCards {...item} />
+              </div>
             ))}
         </div>
       </div>
