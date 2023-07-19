@@ -9,6 +9,8 @@ import HomePage from "./pages/HomePage.jsx";
 import RestaurantPage from "./pages/RestaurantPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
+import BasicForm from "./components/form/BasicForm.jsx";
+import ThankYouPage from "./pages/ThankYouPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchPage />,
+      },
+      {
+        path: "/signIn",
+        element: <BasicForm />,
+      },
+      {
+        path: "/thankyou",
+        element: <ThankYouPage />,
       },
     ],
   },
