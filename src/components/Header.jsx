@@ -1,9 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const cartItems = useSelector((store) => store.cart.items);
+  const login = useSelector((store) => store.login.logged);
+
+  const handleNavigation = () => {
+    if (login) {
+      navigate("/cart");
+    } else {
+      navigate("/signIn");
+    }
+  };
+
   return (
     <header className="fixed left-0 right-0 bg-white z-50 px-44 shadow-lg">
       <nav className="w-full h-[60px] flex items-center justify-between">
@@ -18,13 +31,17 @@ const Header = () => {
               <i className="fa-solid fa-magnifying-glass fa-lg hover:text-orange-500"></i>
             </Link>
           </li>
-          <li className="text-lg font-medium hover:text-orange-500">
-            <Link to="/singIn">Sign In</Link>
-          </li>
-          <li className="relative">
-            <Link to="/cart">
+          {!login && (
+            <li className="text-lg font-medium hover:text-orange-500">
+              <Link to="/signIn">Sign In</Link>
+            </li>
+          )}
+          <li className="relative" onClick={handleNavigation}>
+            <Link>
               <i className="fa-solid fa-cart-shopping fa-lg hover:text-orange-500"></i>
-              <span className="absolute -top-2 right-0 left-3 text-white text-[11px] w-4 h-4 flex items-center justify-center rounded-full bg-blue-500">{cartItems.length}</span>
+              <span className="absolute -top-2 right-0 left-3 text-white text-[11px] w-4 h-4 flex items-center justify-center rounded-full bg-blue-500">
+                {cartItems.length}
+              </span>
             </Link>
           </li>
         </ul>
