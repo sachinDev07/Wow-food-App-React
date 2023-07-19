@@ -16,16 +16,16 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <main className="px-44 py-12">
-      <div className="flex items-center justify-between border-b-2 pb-1">
-        <span className="text-3xl text-black font-bold">
+    <main className="px-2 md:px-24 lg:px-44 py-12">
+      <div className="flex flex-col  items-center justify-between border-b-2 pb-1 md:gap-4">
+        <span className="text-xl md:text-xl lg:text-3xl text-black font-bold">
           {numberOfRestaurants} restaurants
         </span>
-        <div className="flex gap-8 items-center">
+        <div className="flex gap-4 flex-wrap md:flex-nowrap  md:gap-8 items-center mt-2 md:mt-0">
           {sortsData?.map((item) => (
             <span
               key={item.key}
-              className="text-gray-700 font-medium cursor-pointer select-none inline-block hover:text-gray-900"
+              className="text-gray-700 text-sm md:text-lg font-medium cursor-pointer select-none inline-block hover:text-gray-900 border md:border-none rounded-md border-slate-500 p-1"
               onClick={() => handleApiFilter(item)}
             >
               {item.title}
@@ -33,7 +33,7 @@ const RestaurantMenu = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-between flex-wrap">
+      <div className="flex items-center justify-between flex-wrap ">
         {restaurantData?.cards?.map((restaurant) => (
           <Link
             to={`/restaurant/` + restaurant.data.id}

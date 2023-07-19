@@ -35,12 +35,12 @@ const CartPage = () => {
   }
 
   return (
-    <div className="pt-[100px]  select-none flex px-44 py-8 justify-between bg-slate-200 min-h-screen gap-4">
+    <div className="pt-[100px] md:flex md:flex-col px-2 md:px-32 lg:px-44 py-8 justify-between bg-slate-200 min-h-screen gap-4 md:w-full">
       <div>
         <Cart />
       </div>
-      <div className="">
-        <div className="fixed right-44 px-8 py-8 bg-white min-w-[400px] rounded-md">
+      <div className="mt-4 ">
+        <div className="lg:fixed right-0 left-0 md:right-44 px-2 md:px-8 py-8 bg-white md:min-w-[400px] rounded-md">
           <h1 className="font-medium">Bill Details</h1>
           <div className="flex items-center justify-between mt-2">
             <span className="text-slate-500">Item Total</span>

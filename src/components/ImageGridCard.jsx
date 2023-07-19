@@ -8,7 +8,7 @@ const ImageGridCards = ({ imageId }) => {
     <Link>
       <Img
         src={IMG_CDN_API + imageId}
-        className="w-44 h-32"
+        className="md:w-44 md:h-32"
       />
     </Link>
   );

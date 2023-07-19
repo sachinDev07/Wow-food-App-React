@@ -4,7 +4,7 @@ import SearchItem from '../components/SearchItem'
 
 const SearchPage = () => {
   return (
-    <div className='pt-[100px] px-44 h-screen'>
+    <div className='pt-[100px] px-2 md:px-44 h-screen'>
         <SearchItem />
     </div>
   )

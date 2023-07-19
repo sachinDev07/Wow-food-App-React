@@ -12,7 +12,7 @@ const RestaurantPage = () => {
   if (errorMessage) return <div>{errorMessage}</div>;
 
   return (
-    <main className="pt-[100px] px-44 select-none">
+    <main className="pt-[100px] px-4 md:px-32 lg:px-44 select-none">
       <RestaurantsData {...restaurantData} />
     </main>
   );

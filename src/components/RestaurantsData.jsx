@@ -36,7 +36,7 @@ const RestaurantsData = ({
       <hr className="my-8 border border-slate-300" />
       <div>
         <div className="flex items-center justify-between">
-          <span className="text-2xl text-black font-bold">Recommened{}</span>
+          <span className="text-2xl text-black font-bold">Recommened</span>
           <i
             className={`fa-solid fa-chevron-${
               show ? "down" : "up"

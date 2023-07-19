@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -20,7 +20,7 @@ const Slider = () => {
   }
 
   return (
-    <div className="px-44 bg-slate-900 py-12 relative z-30">
+    <div className="px-20 md:px-44 lg:px-44 bg-slate-900 py-20 md:py-12 relative z-30">
       <Carousel responsive={responsive}>
         {data?.map((myitems) => (
           <div
@@ -28,7 +28,7 @@ const Slider = () => {
             className="transition-transfrom hover:scale-105 duration-150"
           >
             <Img
-              className="h-auto w-64 "
+              className="h-auto w-64"
               src={IMG_CDN_API + myitems.data.creativeId}
               alt="image"
             />
