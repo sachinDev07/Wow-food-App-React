@@ -40,7 +40,7 @@ const CartPage = () => {
         <Cart />
       </div>
       <div className="mt-4 ">
-        <div className="lg:fixed right-0 left-0 md:right-44 px-2 md:px-8 py-8 bg-white md:min-w-[400px] rounded-md">
+        <div className="lg:fixed lg:top-24 lg:max-w-[300px] lg:left-[950px] right-0 left-0 md:right-44 px-2 md:px-8 py-8 bg-white md:min-w-[400px] rounded-md">
           <h1 className="font-medium">Bill Details</h1>
           <div className="flex items-center justify-between mt-2">
             <span className="text-slate-500">Item Total</span>

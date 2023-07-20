@@ -28,18 +28,18 @@ const Header = () => {
         <ul className="flex items-center gap-3 md:gap-8">
           <li>
             <Link to="/search">
-              <i className="fa-solid fa-magnifying-glass fa-sm md:fa-lg hover:text-orange-500"></i>
+              <i className="fa-solid fa-magnifying-glass fa-sm md:fa-lg hover:text-orange-500 lg:text-xl"></i>
             </Link>
           </li>
           {!login && (
-            <li className=" text-sm md:text-lg font-medium hover:text-orange-500">
+            <li className=" text-sm md:text-lg font-medium hover:text-orange-500 lg:text-xl">
               <Link to="/signIn">Sign In</Link>
             </li>
           )}
           <li className="relative" onClick={handleNavigation}>
             <Link>
-              <i className="fa-solid fa-cart-shopping fa-sm md:fa-lg hover:text-orange-500"></i>
-              <span className="absolute -top-1 md:-top-2 right-0 left-2 md:left-3 text-white text-[9px] md:text-[11px] w-3 h-3 md:w-4 md:h-4 flex items-center justify-center rounded-full bg-blue-500">
+              <i className="fa-solid fa-cart-shopping fa-sm md:fa-lg hover:text-orange-500 lg:text-xl"></i>
+              <span className="absolute -top-1 md:-top-2 right-0 left-2 md:left-3 lg:left-4 lg:-top-1 text-white text-[9px] md:text-[11px] w-3 h-3 md:w-4 md:h-4 flex items-center justify-center rounded-full bg-blue-500">
                 {cartItems.length}
               </span>
             </Link>

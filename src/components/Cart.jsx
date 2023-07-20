@@ -14,13 +14,13 @@ const Cart = () => {
   }
 
   return (
-    <div className="border-slate-400 rounded-md px-2  py-8 bg-white md:w-[500px] lg:min-w-[700px]">
+    <div className="border-slate-400 rounded-md px-2  py-8 bg-white md:w-[500px] lg:min-w-[700px] lg:px-6">
       {cartItems.map((cartItem) => (
         <div
           className="flex items-center justify-between mb-4 mt-2"
           key={cartItem.id}
         >
-          <h1 className="font-medium text-xs md:texl-lg mr-1">{cartItem.name}</h1>
+          <h1 className="font-medium text-xs md:texl-lg mr-1 lg:text-xl">{cartItem.name}</h1>
           <div className="flex items-center justify-center gap:-4 md:gap-8">
             <div className="flex items-center justify-between text-green-500 font-medium border-slate-400 border bg-white rounded-md cursor-pointer md:w-24">
               <span
