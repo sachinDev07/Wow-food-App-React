@@ -18,7 +18,9 @@ npm start
 This will start the app on [http://localhost:5173](http://localhost:5173).
 
 
-Live : [OrderBro Food App](https://orderbro.netlify.app/).
+Live : [OrderBro Food App](https://orderbro.netlify.app/).  ( Must enable the CORS exstension in your browser)
+
+
 
 ## Screenshot of the Food App
 
