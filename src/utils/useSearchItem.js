@@ -39,7 +39,7 @@ const useSearchItem = () => {
   };
 
   const fetchSuggestions = async () => {
-    const url = `https://www.swiggy.com/dapi/restaurants/search/suggest?lat=23.0363768&lng=72.5466727&str=${inputData}&trackingId=undefined`;
+    const url = ` https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/suggest?lat=23.0363768&lng=72.5466727&str=${inputData}&trackingId=undefined`;
     const response = await fetch(url);
     const data = await response.json();
     setSuggestions(data.data.suggestions);

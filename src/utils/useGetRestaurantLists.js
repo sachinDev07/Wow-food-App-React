@@ -14,7 +14,7 @@ const useGetRestaurantLists = () => {
   }, [filterApi]);
 
   const getRestaurantLists = async () => {
-    const api = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0363768&lng=72.5466727&sortBy=${filterApi}&page_type=DESKTOP_WEB_LISTING&`;
+    const api = ` https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0363768&lng=72.5466727&sortBy=${filterApi}&page_type=DESKTOP_WEB_LISTING&`;
     try {
       const response = await fetch(api);
       const responseData = await response.json();
