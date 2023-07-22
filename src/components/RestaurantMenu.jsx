@@ -4,7 +4,7 @@ import useGetRestaurantLists from "../utils/useGetRestaurantLists";
 import RestaurantCardSkeleton from "./RestaurantCardSkeleton";
 
 const RestaurantMenu = () => {
-  const { restaurantData, numberOfRestaurants, sortsData, loading, error } =
+  const { restaurantData, numberOfRestaurants, handleApiFilter, sortsData, loading, error } =
     useGetRestaurantLists();
 
   if (loading) {

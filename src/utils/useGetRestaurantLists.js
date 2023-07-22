@@ -48,7 +48,7 @@ const useGetRestaurantLists = () => {
     }
   };
 
-  return { restaurantData, numberOfRestaurants, sortsData, loading, error, loading, error };
+  return { restaurantData, numberOfRestaurants, handleApiFilter, sortsData, loading, error, loading, error };
 };
 
 export default useGetRestaurantLists;
