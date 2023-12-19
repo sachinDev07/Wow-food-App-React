@@ -23,7 +23,7 @@ const BasicForm = () => {
 
     setTimeout(() => {
       navigate("/cart");
-    }, 1000);
+    }, 3000);
   };
 
   return (

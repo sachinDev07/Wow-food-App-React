@@ -14,14 +14,15 @@ const useRestaurantData = () => {
   }, []);
 
   const fetchRestaurant = async () => {
-    const api = ` https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.0363768&lng=72.5466727&restaurantId=${resId}&submitAction=ENTER`;
+    const api = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.6708317&lng=71.5723953&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`;
     try {
       const response = await fetch(api);
       const data = await response.json();
-      const restaurantInfo = data.data.cards[0].card.card.info;
-      const menuItem =
-        data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card
-          .itemCards;
+      console.log("data: ", data)
+      // const restaurantInfo = data.data.cards[0].card.card.info;
+      // const menuItem =
+      //   data.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card
+      //     .itemCards;
 
       setRestaurantData({
         name: restaurantInfo.name,

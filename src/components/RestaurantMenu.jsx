@@ -4,20 +4,21 @@ import useGetRestaurantLists from "../utils/useGetRestaurantLists";
 import RestaurantCardSkeleton from "./RestaurantCardSkeleton";
 
 const RestaurantMenu = () => {
-  const { restaurantData, numberOfRestaurants, handleApiFilter, sortsData, loading, error } =
+  const { restaurantData, numberOfRestaurants, sortsData, loading, error } =
     useGetRestaurantLists();
 
-  if (loading) {
-    return <RestaurantCardSkeleton />;
-  }
 
-  if (error) {
-    return <div>{error}</div>;
-  }
+  // if (loading) {
+  //   return <RestaurantCardSkeleton />;
+  // }
+
+  // if (error) {
+  //   return <div>{error}</div>;
+  // }
 
   return (
     <main className="px-2 md:px-24 lg:px-44 py-12">
-      <div className="flex flex-col  items-center justify-between border-b-2 pb-1 md:gap-4">
+      {/* <div className="flex flex-col  items-center justify-between border-b-2 pb-1 md:gap-4">
         <span className="text-xl md:text-xl lg:text-3xl text-black font-bold">
           {numberOfRestaurants} restaurants
         </span>
@@ -32,14 +33,14 @@ const RestaurantMenu = () => {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
       <div className="flex items-center justify-between flex-wrap ">
-        {restaurantData?.cards?.map((restaurant) => (
+        {restaurantData?.map((restaurant) => (
           <Link
-            to={`/restaurant/` + restaurant.data.id}
-            key={restaurant.data.id}
-          >
-            <RestaurantCard {...restaurant.data} />
+          // to={`/restaurant/` + restaurant.info.id}
+          key={restaurant.info.id}
+          > 
+            <RestaurantCard {...restaurant.info} />
           </Link>
         ))}
       </div>

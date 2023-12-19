@@ -1,5 +1,5 @@
 import { IMG_CDN_API } from "../utils/constant";
-import Img from "./Img.jsx"
+import Img from "./Img.jsx";
 
 const RestaurantCard = ({
   name,
@@ -9,7 +9,6 @@ const RestaurantCard = ({
   slaString,
   avgRating,
 }) => {
-
   return (
     <main className="w-full md:w-[280px] md:h-72 hover:border-[2px] border-slate-500-600 p-2 rounded-md mt-8">
       <div className="rounded-md w-full h-44">
@@ -32,7 +31,9 @@ const RestaurantCard = ({
           <i className="fa-solid fa-star fa-sm"></i>
           <span className="text-lg md:text-sm">{avgRating}</span>
         </div>
-        <span className="text-lg md:text-sm font-medium text-gray-600">{slaString}</span>
+        <span className="text-lg md:text-sm font-medium text-gray-600">
+          {slaString}
+        </span>
         <span className="text-lg md:text-sm font-medium text-gray-600">
           {costForTwoString}
         </span>
