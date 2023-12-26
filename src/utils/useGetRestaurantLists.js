@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { APP_API } from "./constant";
 
 const useGetRestaurantLists = () => {
   const [restaurantData, setRestaurantData] = useState(null);
@@ -14,9 +15,8 @@ const useGetRestaurantLists = () => {
   }, []);
 
   const getRestaurantLists = async () => {
-    const api = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`;
     // try {
-    const response = await fetch(api);
+    const response = await fetch(APP_API);
     const responseData = await response.json();
    
 
@@ -26,7 +26,7 @@ const useGetRestaurantLists = () => {
     // );
     // setSortsData(responseData.data.sorts);
     setRestaurantData(
-      responseData.data.cards[2].card.card.gridElements.infoWithStyle
+      responseData.data.cards[3].card.card.gridElements.infoWithStyle
         .restaurants
     );
     // } else {

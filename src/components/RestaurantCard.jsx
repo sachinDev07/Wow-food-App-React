@@ -5,8 +5,8 @@ const RestaurantCard = ({
   name,
   cuisines,
   cloudinaryImageId,
-  costForTwoString,
-  slaString,
+  costForTwo,
+  sla,
   avgRating,
 }) => {
   return (
@@ -32,10 +32,10 @@ const RestaurantCard = ({
           <span className="text-lg md:text-sm">{avgRating}</span>
         </div>
         <span className="text-lg md:text-sm font-medium text-gray-600">
-          {slaString}
+          {sla.slaString}
         </span>
         <span className="text-lg md:text-sm font-medium text-gray-600">
-          {costForTwoString}
+          {costForTwo}
         </span>
       </div>
     </main>
